@@ -44,6 +44,7 @@ class MyClass
 					global $USER;
                     global $APPLICATION;
                     Event::send([
+                        /* требуется создать событие в административной части и шаблон где будет указана почта модератора и текст письма */
                         "EVENT_NAME" => "USER_COMPANY_MODERATION",
                         "LID" => "s1",
                         "C_FIELDS" => [
@@ -54,7 +55,6 @@ class MyClass
                         ],
                     ]);
 
-                    /* требуется создать событие в административной части и шаблон */
 			        $APPLICATION->throwException("Нельзя удалить данный товар, так как он очень популярный на сайте");
 			        return false;
 				}
